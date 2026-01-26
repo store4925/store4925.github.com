@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>The UPS Store Spotswood NJ</title>
+
+  <!-- Theme / Mobile -->
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <!-- Favicons -->
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png">
+
+  <!-- Social / Share previews -->
+  <meta property="og:title" content="The UPS Store Spotswood NJ">
+  <meta property="og:description" content="Quick contact for The UPS Store Spotswood, NJ.">
+  <meta property="og:image" content="ups_logo.png">
+  <meta property="og:type" content="website">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The UPS Store Spotswood NJ">
+  <meta name="twitter:description" content="Quick contact for The UPS Store Spotswood, NJ.">
+  <meta name="twitter:image" content="ups_logo.png">
+
+  <style>
+    :root{
+      --lightblue:#7ec8ff;
+      --green:#28a745;
+      --red:#dc3545;
+      --card:#0d0d0d;
+      --text:#f2f2f2;
+      --muted:#b5b5b5;
+      --border: rgba(255,255,255,.12);
+    }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:#000;
+      color:var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+      padding:32px 16px 60px;
+    }
+
+    .logo{
+      display:flex;
+      justify-content:center;
+      margin-top:8px;
+    }
+
+    .logo img{
+      width:420px;
+      max-width:90%;
+      height:auto;
+    }
+
+    h1{
+      text-align:center;
+      color:var(--lightblue);
+      font-size:40px;
+      margin:16px 0 18px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    }
+
+    .btnrow{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom: 10px;
+    }
+
+    .btn{
+      border:none;
+      border-radius:12px;
+      padding:14px 20px;
+      font-size:16px;
+      font-weight:800;
+      cursor:pointer;
+      color:#fff;
+      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+      transition: transform .06s ease-in-out, filter .12s;
+    }
+
+    .btn:hover{ filter: brightness(1.05); }
+    .btn:active{ transform: translateY(1px); }
+
+    .green{ background:var(--green); }
+    .red{ background:var(--red); }
+
+    .hint{
+      text-align:center;
+      margin-top:10px;
+      color:var(--muted);
+      min-height:20px;
+      font-weight:700;
+    }
+
+    .sectionTitle{
+      text-align:center;
+      margin: 18px 0 10px;
+      font-weight: 900;
+      letter-spacing: .2px;
+    }
+
+    .qrGrid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .qrCard{
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding: 14px;
+      text-align:center;
+      background: rgba(255,255,255,.03);
+    }
+
+    .qrCard img{
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      border-radius: 12px;
+      background: #fff;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+
+    .qrLabel{
+      margin-top:10px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .qrSub{
+      margin-top:4px;
+      color: var(--muted);
+      font-size: 13px;
+      word-break: break-word;
+    }
+
+    .small{
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:16px;
+      line-height:1.4;
+    }
+
+    @media (max-width: 720px){
+      .qrGrid{ grid-template-columns: 1fr; }
+      .qrCard img{ max-width: 320px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="logo">
+      <img src="ups_logo.png" alt="UPS Store Logo">
+    </div>
+
+    <h1>The UPS Store Spotswood NJ</h1>
+
+    <div class="card">
+      <div class="btnrow">
+        <button class="btn green" id="copyStore">Copy Store Email</button>
+        <button class="btn red" id="copyGmail">Copy Gmail</button>
+      </div>
+
+      <div class="hint" id="hint"></div>
+
+      <div class="sectionTitle">Scan to Email</div>
+
+      <div class="qrGrid">
+        <div class="qrCard">
+          <img src="qr_store_email.png" alt="QR Code - Store Email">
+          <div class="qrLabel">Store Email</div>
+          <div class="qrSub">store4925@theupsstore.com</div>
+        </div>
+
+        <div class="qrCard">
+          <img src="qr_gmail.png" alt="QR Code - Gmail">
+          <div class="qrLabel">Gmail</div>
+          <div class="qrSub">store4925@gmail.com</div>
+        </div>
+      </div>
+
+      <div class="small">
+        Tip: Scanning opens the email app with the address filled in.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const hint = document.getElementById("hint");
+
+    function showHint(msg){
+      hint.textContent = msg;
+      setTimeout(() => hint.textContent = "", 2200);
+    }
+
+    async function copyEmail(email){
+      try{
+        await navigator.clipboard.writeText(email);
+        showHint("Copied: " + email);
+      }catch{
+        window.location.href = "mailto:" + email;
+        showHint("Copy blocked — mail app opened.");
+      }
+    }
+
+    document.getElementById("copyStore").onclick = () =>
+      copyEmail("store4925@theupsstore.com");
+
+    document.getElementById("copyGmail").onclick = () =>
+      copyEmail("store4925@gmail.com");
+  </script>
+</body>
+</html>
