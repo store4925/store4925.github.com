@@ -76,7 +76,14 @@
       letter-spacing:.2px;
     }
 
-    .card{
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .block{
       background:var(--card);
       border:1px solid var(--border);
       border-radius:16px;
@@ -84,52 +91,43 @@
       box-shadow: 0 10px 26px rgba(0,0,0,.35);
     }
 
-    .btnrow{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-bottom: 10px;
+    .blockTitle{
+      text-align:center;
+      font-weight: 900;
+      margin: 0 0 14px;
+      letter-spacing: .2px;
     }
 
-    .btn{
+    .bigBtn{
+      width: 100%;
       border:none;
-      border-radius:12px;
-      padding:14px 20px;
-      font-size:16px;
-      font-weight:800;
+      border-radius:14px;
+      padding:18px 20px;
+      font-size:20px;
+      font-weight:900;
       cursor:pointer;
       color:#fff;
-      box-shadow: 0 8px 18px rgba(0,0,0,.25);
+      box-shadow: 0 10px 22px rgba(0,0,0,.25);
       transition: transform .06s ease-in-out, filter .12s;
     }
-
-    .btn:hover{ filter: brightness(1.05); }
-    .btn:active{ transform: translateY(1px); }
-
+    .bigBtn:hover{ filter: brightness(1.06); }
+    .bigBtn:active{ transform: translateY(1px); }
     .green{ background:var(--green); }
     .red{ background:var(--red); }
 
     .hint{
       text-align:center;
-      margin-top:10px;
+      margin-top:12px;
       color:var(--muted);
       min-height:20px;
       font-weight:700;
     }
 
-    .sectionTitle{
-      text-align:center;
-      margin: 18px 0 10px;
-      font-weight: 900;
-      letter-spacing: .2px;
-    }
-
-    .qrGrid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      margin-top: 10px;
+    .qrRow{
+      display:flex;
+      gap:16px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
 
     .qrCard{
@@ -138,17 +136,35 @@
       padding: 14px;
       text-align:center;
       background: rgba(255,255,255,.03);
+      max-width: 320px;
+      width: 100%;
     }
 
-    .qrCard img{
-      width: 100%;
-      max-width: 260px;
-      height: auto;
+    .qrTap{
+      display:block;
+      text-decoration:none;
+      color: inherit;
+    }
+
+    .qrImgWrap{
+      display:flex;
+      justify-content:center;
+      margin-top: 4px;
+    }
+
+    .qrImgWrap img{
+      width: 220px;
+      max-width: 100%;
+      height:auto;
       border-radius: 12px;
       background: #fff;
       padding: 8px;
       box-sizing: border-box;
+      transition: transform .08s ease-in-out, filter .12s;
     }
+
+    .qrTap:hover img{ filter: brightness(1.03); }
+    .qrTap:active img{ transform: scale(0.99); }
 
     .qrLabel{
       margin-top:10px;
@@ -167,13 +183,15 @@
       text-align:center;
       color:var(--muted);
       font-size:13px;
-      margin-top:16px;
+      margin-top:12px;
       line-height:1.4;
     }
 
-    @media (max-width: 720px){
-      .qrGrid{ grid-template-columns: 1fr; }
-      .qrCard img{ max-width: 320px; }
+    @media (min-width: 900px){
+      .grid{
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
     }
   </style>
 </head>
@@ -186,32 +204,57 @@
 
     <h1>The UPS Store Spotswood NJ</h1>
 
-    <div class="card">
-      <div class="btnrow">
-        <button class="btn green" id="copyStore">Copy Store Email</button>
-        <button class="btn red" id="copyGmail">Copy Gmail</button>
-      </div>
+    <div class="grid">
+      <!-- BLOCK 1: COPY BUTTONS (BIGGER THAN QR) -->
+      <div class="block">
+        <div class="blockTitle">Copy Emails</div>
 
-      <div class="hint" id="hint"></div>
+        <button class="bigBtn green" id="copyStore">
+          Copy Store Email
+        </button>
 
-      <div class="sectionTitle">Scan to Email</div>
+        <div style="height:12px;"></div>
 
-      <div class="qrGrid">
-        <div class="qrCard">
-          <img src="qr_store_email.png" alt="QR Code - Store Email">
-          <div class="qrLabel">Store Email</div>
-          <div class="qrSub">store4925@theupsstore.com</div>
-        </div>
+        <button class="bigBtn red" id="copyGmail">
+          Copy Gmail
+        </button>
 
-        <div class="qrCard">
-          <img src="qr_gmail.png" alt="QR Code - Gmail">
-          <div class="qrLabel">Gmail</div>
-          <div class="qrSub">store4925@gmail.com</div>
+        <div class="hint" id="hint"></div>
+
+        <div class="small">
+          If copy is blocked, we’ll open your mail app instead.
         </div>
       </div>
 
-      <div class="small">
-        Tip: Scanning opens the email app with the address filled in.
+      <!-- BLOCK 2: QR CODES (TAP TO OPEN EMAIL) -->
+      <div class="block">
+        <div class="blockTitle">Tap or Scan to Email</div>
+
+        <div class="qrRow">
+          <div class="qrCard">
+            <a class="qrTap" href="mailto:store4925@theupsstore.com">
+              <div class="qrImgWrap">
+                <img src="qr_store_email.png" alt="QR Code - Store Email">
+              </div>
+              <div class="qrLabel">Store Email</div>
+              <div class="qrSub">store4925@theupsstore.com</div>
+            </a>
+          </div>
+
+          <div class="qrCard">
+            <a class="qrTap" href="mailto:store4925@gmail.com">
+              <div class="qrImgWrap">
+                <img src="qr_gmail.png" alt="QR Code - Gmail">
+              </div>
+              <div class="qrLabel">Gmail</div>
+              <div class="qrSub">store4925@gmail.com</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="small">
+          Tapping a QR opens the email app, same as scanning.
+        </div>
       </div>
     </div>
   </div>
