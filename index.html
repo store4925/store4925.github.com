@@ -52,13 +52,25 @@
     .wrap{
       max-width:920px;
       margin:0 auto;
-      padding:32px 16px 60px;
+      padding:28px 16px 60px;
+    }
+
+    .tips{
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:14px 16px;
+      margin-bottom:20px;
+      text-align:center;
+      font-weight:700;
+      color:var(--muted);
+      line-height:1.5;
     }
 
     .logo{
       display:flex;
       justify-content:center;
-      margin-top:8px;
+      margin-top:6px;
     }
 
     .logo img{
@@ -71,7 +83,7 @@
       text-align:center;
       color:var(--lightblue);
       font-size:40px;
-      margin:16px 0 18px;
+      margin:14px 0 18px;
       font-weight:800;
       letter-spacing:.2px;
     }
@@ -179,14 +191,6 @@
       word-break: break-word;
     }
 
-    .small{
-      text-align:center;
-      color:var(--muted);
-      font-size:13px;
-      margin-top:12px;
-      line-height:1.4;
-    }
-
     @media (min-width: 900px){
       .grid{
         grid-template-columns: 1fr 1fr;
@@ -198,6 +202,13 @@
 
 <body>
   <div class="wrap">
+
+    <!-- TIPS AT TOP -->
+    <div class="tips">
+      Tapping a QR opens the email app, same as scanning.<br>
+      If copy is blocked, we’ll open your mail app instead.
+    </div>
+
     <div class="logo">
       <img src="ups_logo.png" alt="UPS Store Logo">
     </div>
@@ -205,7 +216,7 @@
     <h1>The UPS Store Spotswood NJ</h1>
 
     <div class="grid">
-      <!-- BLOCK 1: COPY BUTTONS (BIGGER THAN QR) -->
+      <!-- COPY BUTTONS -->
       <div class="block">
         <div class="blockTitle">Copy Emails</div>
 
@@ -220,13 +231,9 @@
         </button>
 
         <div class="hint" id="hint"></div>
-
-        <div class="small">
-          If copy is blocked, we’ll open your mail app instead.
-        </div>
       </div>
 
-      <!-- BLOCK 2: QR CODES (TAP TO OPEN EMAIL) -->
+      <!-- QR CODES -->
       <div class="block">
         <div class="blockTitle">Tap or Scan to Email</div>
 
@@ -250,10 +257,6 @@
               <div class="qrSub">store4925@gmail.com</div>
             </a>
           </div>
-        </div>
-
-        <div class="small">
-          Tapping a QR opens the email app, same as scanning.
         </div>
       </div>
     </div>
